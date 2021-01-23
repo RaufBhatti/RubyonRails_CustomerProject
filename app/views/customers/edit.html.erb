@@ -1,0 +1,7 @@
+<h1>Edit Customer</h1>
+
+<%= render 'form', customer: @customer %>
+<br>
+<%= link_to 'Show', @customer,class:"btn btn-secondary" %>
+<%= link_to 'Delete', @customer, class:"btn btn-danger ", method: :delete, data: { confirm: 'Are you sure to delete?' } %>
+<%= link_to 'Back', customers_path,class:"btn btn-dark" %>

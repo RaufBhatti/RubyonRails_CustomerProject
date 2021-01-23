@@ -1,0 +1,14 @@
+<div class="jumbotron">
+  <h1 class="display-4">
+  <%= @customer.first_name %>
+  <%= @customer.last_name %>
+  </h1>
+  <p class="lead">
+  <%= @customer.email %> | 
+  <%= @customer.phone %> | 
+  <%= @customer.address %>
+  </p><br>
+  <%= link_to 'Edit', edit_customer_path(@customer), class:"btn btn-secondary" %>
+<%= link_to 'Delete', @customer, class:"btn btn-danger ", method: :delete, data: { confirm: 'Are you sure to delete?' } %>
+<%= link_to 'Back', customers_path, class:"btn btn-dark" %>
+</div>

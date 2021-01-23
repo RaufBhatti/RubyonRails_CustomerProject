@@ -1,0 +1,29 @@
+<table class="table table-striped table-hover table-bordered" style="text-align:center;">
+  <thead class="table-dark">
+    <tr>
+      <th>Username</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Address</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+
+  <tbody ">
+    <% @customers.each do |customer| %>
+      <% if customer.user == current_user %>
+      <tr>
+        <td><%= link_to customer.first_name + ' ' + customer.last_name, customer %></td>
+        <td><%= customer.email %></td>
+        <td><%= customer.phone %></td>
+        <td><%= customer.address %></td>
+        <td><%= link_to 'Delete', customer, class:"btn btn-outline-danger btn-sm", method: :delete, data: { confirm: 'Are you sure to delete?' } %></td>
+      </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Add Customer', new_customer_path, class:"btn btn-info" %>
